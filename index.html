@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="IrsanAI Resonance Protocol: Erzeuge meta-kognitive Startprompts für echte Mensch-LLM-Kollaboration."
+    />
+    <title>IrsanAI RP v1.0 — Resonance Protocol</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="aurora" aria-hidden="true"></div>
+    <main class="container">
+      <header class="hero">
+        <p class="badge">RESONANCE PROTOCOL • v1.0</p>
+        <h1>IrsanAI RP</h1>
+        <p class="subtitle">
+          3-Way-Handshake für Mensch × LLM Zusammenarbeit auf meta-kognitiver Ebene.
+        </p>
+      </header>
+
+      <section class="card">
+        <h2>1) Intent definieren</h2>
+        <div class="preset-grid" id="presetGrid" aria-label="Intent Presets"></div>
+        <label for="intent" class="label">Dein Vorhaben / Intent</label>
+        <textarea
+          id="intent"
+          rows="5"
+          placeholder="z. B. Wir entwickeln gemeinsam ein neues KI-Protokoll, inklusive Roadmap und Tests."
+        ></textarea>
+      </section>
+
+      <section class="card">
+        <h2>2) Resonanz-Profil wählen</h2>
+        <div class="toggles">
+          <label><input type="checkbox" id="includeDesire" checked /> White Hot Desire einbeziehen</label>
+          <label><input type="checkbox" id="includeBoundaries" checked /> Grenzen + Sicherheit + Co-Kreation betonen</label>
+          <label><input type="checkbox" id="maxMeta" /> Maximalen Meta-Kognitions-Level aktivieren</label>
+        </div>
+      </section>
+
+      <section class="card action-card">
+        <button id="generateBtn" class="primary">Resonanz-Verbindung herstellen</button>
+        <div class="handshake" id="handshake" aria-live="polite"></div>
+      </section>
+
+      <section class="card output-card hidden" id="outputSection">
+        <div class="output-head">
+          <h2>3) Generierte Resonanz-Prompt</h2>
+          <div class="actions">
+            <button id="copyBtn" class="secondary">Prompt kopieren</button>
+          </div>
+        </div>
+        <pre id="output"></pre>
+        <div class="quick-links">
+          <a href="https://grok.com/" target="_blank" rel="noreferrer">In Grok öffnen</a>
+          <a href="https://chat.openai.com/" target="_blank" rel="noreferrer">In ChatGPT öffnen</a>
+          <a href="https://claude.ai/" target="_blank" rel="noreferrer">In Claude öffnen</a>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="history-head">
+          <h2>Letzte Prompts (lokal)</h2>
+          <button id="clearHistoryBtn" class="ghost">Verlauf löschen</button>
+        </div>
+        <ul id="historyList" class="history-list"></ul>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

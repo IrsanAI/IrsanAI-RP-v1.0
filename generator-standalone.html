@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IrsanAI RP — Standalone Generator</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container compact">
+      <header class="hero">
+        <p class="badge">Standalone</p>
+        <h1>Resonance Prompt Generator</h1>
+      </header>
+
+      <section class="card">
+        <label for="intent" class="label">Intent</label>
+        <textarea id="intent" rows="4" placeholder="Beschreibe dein Vorhaben..."></textarea>
+        <div class="toggles">
+          <label><input type="checkbox" id="includeDesire" checked /> White Hot Desire</label>
+          <label><input type="checkbox" id="includeBoundaries" checked /> Grenzen + Co-Kreation</label>
+          <label><input type="checkbox" id="maxMeta" /> Max Meta</label>
+        </div>
+        <button id="generateBtn" class="primary">Generate</button>
+        <div class="handshake" id="handshake"></div>
+      </section>
+
+      <section class="card output-card hidden" id="outputSection">
+        <div class="output-head">
+          <h2>Prompt</h2>
+          <button id="copyBtn" class="secondary">Copy</button>
+        </div>
+        <pre id="output"></pre>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>

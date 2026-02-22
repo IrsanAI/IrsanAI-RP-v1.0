@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="IrsanAI Resonance Protocol: Fokusfreundliche Prompt-Erstellung mit Intent-Klassifizierung für RP-vs-Direct Einsatz." 
+      content="IrsanAI Resonance Protocol: Fokusfreundliche Prompt-Erstellung, bei der das Online-LLM autonom die effizienteste Route entscheidet."
     />
     <title>IrsanAI RP v1.0 — Resonance Protocol</title>
     <link rel="stylesheet" href="styles.css" />
@@ -35,23 +35,6 @@
         <p class="support-copy" data-i18n="step1Support"></p>
         <label for="intent" class="label" data-i18n="intentLabel"></label>
         <textarea id="intent" rows="6"></textarea>
-      </section>
-
-      <section class="card">
-        <h2 data-i18n="stepIntentCheckTitle"></h2>
-        <p class="support-copy" data-i18n="stepIntentCheckSupport"></p>
-        <div class="advisor-controls">
-          <button id="analyzeBtn" class="secondary" data-i18n="analyzeBtn"></button>
-          <label class="mode-picker">
-            <span data-i18n="modeLabel"></span>
-            <select id="modeSelect" aria-label="Mode selector">
-              <option value="auto" data-i18n="modeAuto"></option>
-              <option value="rp" data-i18n="modeRp"></option>
-              <option value="direct" data-i18n="modeDirect"></option>
-            </select>
-          </label>
-        </div>
-        <div id="advisorResult" class="advisor-result" aria-live="polite"></div>
       </section>
 
       <section class="card">

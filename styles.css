@@ -81,18 +81,6 @@ textarea {
 }
 textarea:focus, select:focus { outline: 2px solid rgba(83, 242, 255, 0.55); }
 
-.advisor-controls { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
-.mode-picker { display: inline-flex; gap: 6px; align-items: center; color: var(--muted); }
-.advisor-result {
-  margin-top: 10px;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  background: rgba(6, 10, 20, 0.7);
-  padding: 10px 12px;
-  color: var(--muted);
-}
-.advisor-result p { margin: 4px 0; }
-
 .mindflow-list {
   border: 1px solid var(--border);
   border-radius: 12px;

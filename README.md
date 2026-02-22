@@ -2,55 +2,49 @@
 
 Fokusorientierter, statischer Prompt-Generator für bessere Mensch-LLM Zusammenarbeit über ein strukturiertes 3-Way-Handshake-Pattern.
 
-## Kern-Upgrade in dieser Version
+## Korrektur des Kernprinzips
 
-Diese Version adressiert die zentrale Frage: **Wann sollte RP verwendet werden — und wann ist ein direkter Weg besser?**
+In dieser Version wurde ein Missverständnis aufgelöst:
 
-### Neu: Intent-Check vor der Prompt-Erzeugung
+- Das **RP-Frontend trifft keine Intent-Entscheidung** mehr.
+- Das RP bleibt ein **Werkzeug / Brücke** zwischen Mensch und LLM.
+- Die **autonome Routenwahl** (z. B. Direct-Shortcut, Resonanz-Route oder weiterer Weg) passiert erst im **Online-LLM nach Erhalt des RP-Prompts**.
 
-Vor dem eigentlichen Prompt kann der Nutzer den Intent analysieren lassen:
+## Neu ausgerichtetes RP-Verhalten
 
-- Intent-Klassifikation: eher **Ad-hoc/Direct** oder **Ko-kreativ/Resonanzfähig**
-- Verständnisindikator in **Prozent**
-- Modus-Empfehlung: **Direct** oder **RP**
-- Override möglich: Auto / RP erzwingen / Direct erzwingen
+Der erzeugte RP-Prompt fordert vom Online-LLM in der **ersten Antwort**:
 
-### Neu: RP First-Reply Cockpit (LLM-seitig)
+1. Menschliche, empathische Intent-Zusammenfassung
+2. Probabilistische Verlaufseinschätzung (%)
+3. Autonome Wahl des effizientesten Startwegs
+4. Predictive Shortcut zur Ping-Pong-Reduktion
+5. User-Cockpit/Dashboard-Gefühl (Option A/B/C)
 
-Der generierte RP-Prompt enthält jetzt eine klare Anweisung an Online-LLMs, die **erste Antwort** als user-zentriertes Start-Cockpit zu liefern:
-
-- Intent-Verständnis in menschlicher Sprache (nicht technisch)
-- Probabilistische Verlaufseinschätzung (%)
-- Autonome Effizienzentscheidung: **Direct-Shortcut vs Resonanz-Route**
-- Predictive Shortcut zur Reduktion von unnötigem Ping-Pong
-- Mini-Menü (A/B/C) für den User zum direkten Einstieg
-
-Ziel: schneller zum eigentlichen Nutzerziel bei weniger unnötigen Tokens.
+Damit liegt die Intelligenz dort, wo sie hingehört: beim LLM mit seinem kognitiven Wissen — nicht im statischen RP-Frontend.
 
 ## UX-Prinzipien
 
 - Keine klickbaren Intent-Beispiele (keine kognitive Ablenkung)
-- Mind-Flow-Fragen statt Presets
-- 4-Schritt-Flow:
+- Kein lokaler Intent-Entscheider im RP-Frontend
+- 3-Schritt-Flow:
   1. Intent schreiben
-  2. Intent klassifizieren (RP vs Direct)
-  3. Mind-Flow + RP-Parameter
-  4. Finalen Prompt erzeugen und kopieren
+  2. Resonanz-Parameter setzen
+  3. RP-Protokoll erzeugen und im Online-LLM ausführen
 
 ## Features
 
 - 100% static (HTML/CSS/JS), kein Backend
 - Mehrsprachigkeit (Deutsch / Englisch / Spanisch)
-- Intent Advisor + Modusumschaltung (Auto/RP/Direct)
-- RP-Prompt mit First-Reply-Cockpit-Anweisung
+- RP-Prompt mit LLM-autonomer Wegentscheidung
+- User-zentrierte First-Reply-Cockpit-Anweisung
 - Lokale Prompt-Historie (letzte 3)
 - Copy-to-clipboard + responsive UI
 
 ## Dateien
 
-- `index.html` — Hauptoberfläche mit Intent-Advisor, Schritt-Flow und Erwartungswert-Sektion
+- `index.html` — Hauptoberfläche
 - `generator-standalone.html` — kompakte Generatoransicht
-- `app.js` — I18n, Intent-Klassifizierung, Prompt-Building, History, Copy
+- `app.js` — I18n, RP-Prompt-Building, History, Copy
 - `styles.css` — visuelles System und responsive Layouts
 - `LICENSE` — MIT
 
@@ -59,13 +53,9 @@ Ziel: schneller zum eigentlichen Nutzerziel bei weniger unnötigen Tokens.
 1. `index.html` öffnen
 2. Sprache wählen (DE/EN/ES)
 3. Intent eintragen
-4. Intent analysieren (optional, empfohlen)
-5. Modus bestätigen (Auto/RP/Direct)
-6. Prompt erzeugen, kopieren, in ein Online-LLM einfügen
-
-## Hinweis zu Online-LLMs
-
-Das RP kann die gewünschte Erstantwort-Struktur stark anstoßen. Ob ein konkretes LLM dies **vollständig** umsetzt, hängt jedoch vom jeweiligen Modellverhalten, Policies und Systemprioritäten der Plattform ab.
+4. Resonanz-Parameter setzen
+5. RP-Protokoll erzeugen, kopieren, in ein Online-LLM einfügen
+6. LLM entscheidet autonom über den effizientesten Weg
 
 ## Lizenz
 

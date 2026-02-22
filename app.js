@@ -4,61 +4,34 @@
       badge: 'RESONANCE PROTOCOL • v1.0',
       languageLabel: 'Sprache',
       heroTitle: 'IrsanAI RP',
-      heroSubtitle: 'Intent zuerst: Entscheide bewusst, ob du nur eine direkte Antwort willst oder echte Resonanz brauchst.',
-      step1Title: '1) Beschreibe exakt dein Vorhaben',
-      step1Support: 'So formulieren, wie du es direkt in ein Online-LLM schreiben würdest.',
+      heroSubtitle: 'Das RP entscheidet nichts vorab: Das Online-LLM trifft nach Erhalt autonom die effizienteste Route für deinen Intent.',
+      step1Title: '1) Beschreibe dein Vorhaben',
+      step1Support: 'So, wie du es direkt in ein Online-LLM schreiben würdest.',
       intentLabel: 'Dein Intent',
       intentPlaceholder: 'Ziel, Kontext, gewünschtes Ergebnis und ggf. Randbedingungen.',
-      stepIntentCheckTitle: '2) Intent-Check: RP nötig oder Direct besser?',
-      stepIntentCheckSupport: 'Das System klassifiziert deinen Intent, gibt ein Verständnis in % und empfiehlt den passenden Modus.',
-      analyzeBtn: 'Intent analysieren',
-      modeLabel: 'Modus',
-      modeAuto: 'Auto (empfohlen)',
-      modeRp: 'RP-Modus erzwingen',
-      modeDirect: 'Direct-Modus erzwingen',
-      advisorNeedIntent: 'Bitte zuerst deinen Intent eintragen.',
-      advisorLabelType: 'Typ',
-      advisorLabelConfidence: 'Verständnis',
-      advisorLabelRec: 'Empfehlung',
-      advisorLabelWhy: 'Warum',
-      advisorTypeDirect: 'Ad-hoc / direkte Antwort',
-      advisorTypeResonance: 'Ko-kreativ / resonanzfähig',
-      advisorRecDirect: 'Direct-Modus',
-      advisorRecRp: 'RP-Modus',
-      advisorWhyDirect: 'Intent wirkt transaktional oder auf eine einmalige Antwort ausgerichtet.',
-      advisorWhyRp: 'Intent wirkt iterativ, offen und auf gemeinsame Entwicklung ausgelegt.',
-      step2Title: '3) Mind-Flow verstärken',
-      step2Support: 'Keine Beispiele, keine Ablenkung — nur Fokusfragen und RP-Parameter.',
+      step2Title: '2) Resonanz-Parameter setzen',
+      step2Support: 'RP ist die Brücke. Die Entscheidung über Weg 1/2/weitere Wege trifft das LLM nach Erhalt.',
       mindflowBullets: [
-        'Was ist das 1-Satz-Kernziel?',
-        'Was wäre heute ein konkret nutzbarer Output?',
-        'Welche Grenze/Bedingung muss eingehalten werden?'
+        'Was ist dein Kernziel in einem Satz?',
+        'Welcher Output wäre jetzt sofort nützlich?',
+        'Welche Grenze oder Bedingung ist wichtig?'
       ],
       toggleDesire: 'White Hot Desire einbeziehen',
       toggleBoundaries: 'Grenzen + Sicherheit + Co-Kreation betonen',
       toggleMeta: 'Maximalen Meta-Kognitions-Level aktivieren',
-      generateBtn: 'Prompt erzeugen',
-      handshakeReadyRp: 'SYN → SYN-ACK → ACK • RP-Verbindung established ✓',
-      handshakeReadyDirect: 'Direct-Mode ✓ Fokus auf schnelle, klare Antwort',
+      generateBtn: 'RP-Protokoll erzeugen',
+      handshakeReadyRp: 'RP-Prompt erzeugt ✓ Entscheidung folgt autonom im Online-LLM',
       handshakeNeedIntent: 'Bitte zuerst deinen Intent eintragen.',
-      step3Title: '4) Ergebnis: Prompt für dein LLM',
+      step3Title: '3) Ergebnis: RP-Prompt für dein LLM',
       copyBtn: 'Prompt kopieren',
       copied: 'Kopiert ✓',
       copyFail: 'Copy nicht möglich',
-      expectedTitle: 'Zu erwartendes Ergebnis (mit vs. ohne RP)',
-      expectedSupport: 'RP lohnt sich vor allem bei längeren, iterativen Vorhaben; bei Einmalfragen oft nicht nötig.',
+      expectedTitle: 'Zu erwartendes Ergebnis (ohne vs. mit RP)',
+      expectedSupport: 'Mit RP entscheidet das LLM in der ersten Antwort autonom über die effizienteste Route.',
       withoutRpTitle: 'Ohne RP',
-      withoutRpBullets: [
-        'Schnell bei Einmalfragen',
-        'Weniger Overhead, direkter Output',
-        'Bei komplexen Vorhaben oft weniger Struktur'
-      ],
+      withoutRpBullets: ['Schnell bei einfachen Einmalfragen', 'Route oft implizit statt explizit', 'Mehr zufälliges Ping-Pong bei komplexen Vorhaben'],
       withRpTitle: 'Mit RP',
-      withRpBullets: [
-        'Erste Antwort als user-zentriertes Start-Cockpit statt Technikblock',
-        'Probabilistische Verlaufseinschätzung + effizientester Pfad von Anfang an',
-        'Besser für Iteration, Co-Creation und Ping-Pong-Reduktion'
-      ],
+      withRpBullets: ['LLM liefert ein user-zentriertes Start-Cockpit', 'LLM trifft autonom Wegentscheidung (z. B. Direct vs Resonanz)', 'Predictive Shortcut reduziert unnötige Tokens'],
       historyTitle: 'Letzte Prompts (lokal)',
       historyClear: 'Verlauf löschen',
       historyEmpty: 'Noch kein Verlauf vorhanden.',
@@ -68,57 +41,34 @@
       badge: 'RESONANCE PROTOCOL • v1.0',
       languageLabel: 'Language',
       heroTitle: 'IrsanAI RP',
-      heroSubtitle: 'Intent first: decide whether you need a direct answer or true resonance.',
-      step1Title: '1) Describe your intent precisely',
+      heroSubtitle: 'RP makes no upfront decision: the online LLM autonomously chooses the most efficient route after receiving the prompt.',
+      step1Title: '1) Describe your intent',
       step1Support: 'Write it exactly as you would in an online LLM.',
       intentLabel: 'Your intent',
       intentPlaceholder: 'Goal, context, desired output, and constraints.',
-      stepIntentCheckTitle: '2) Intent check: RP needed or direct better?',
-      stepIntentCheckSupport: 'The system classifies your intent, gives understanding in %, and recommends a mode.',
-      analyzeBtn: 'Analyze intent',
-      modeLabel: 'Mode',
-      modeAuto: 'Auto (recommended)',
-      modeRp: 'Force RP mode',
-      modeDirect: 'Force direct mode',
-      advisorNeedIntent: 'Please enter your intent first.',
-      advisorLabelType: 'Type',
-      advisorLabelConfidence: 'Understanding',
-      advisorLabelRec: 'Recommendation',
-      advisorLabelWhy: 'Why',
-      advisorTypeDirect: 'Ad-hoc / direct answer',
-      advisorTypeResonance: 'Co-creative / resonance-ready',
-      advisorRecDirect: 'Direct mode',
-      advisorRecRp: 'RP mode',
-      advisorWhyDirect: 'Intent appears transactional or aimed at a one-shot answer.',
-      advisorWhyRp: 'Intent appears iterative and aimed at co-development.',
-      step2Title: '3) Strengthen mind-flow',
-      step2Support: 'No examples, no distraction — just focus checks and RP parameters.',
+      step2Title: '2) Set resonance parameters',
+      step2Support: 'RP is the bridge. Path selection (way 1/2/others) is decided by the LLM after receiving RP.',
       mindflowBullets: [
-        'What is the one-sentence core objective?',
-        'What practical output would be useful today?',
-        'Which boundary/constraint must be respected?'
+        'What is your core goal in one sentence?',
+        'What output would be immediately useful?',
+        'Which boundary or condition matters?'
       ],
       toggleDesire: 'Include White Hot Desire',
       toggleBoundaries: 'Emphasize boundaries + safety + co-creation',
       toggleMeta: 'Enable maximum meta-cognitive depth',
-      generateBtn: 'Generate prompt',
-      handshakeReadyRp: 'SYN → SYN-ACK → ACK • RP connection established ✓',
-      handshakeReadyDirect: 'Direct mode ✓ Fast and clear answer focus',
+      generateBtn: 'Generate RP protocol',
+      handshakeReadyRp: 'RP prompt generated ✓ autonomous decision happens in the online LLM',
       handshakeNeedIntent: 'Please enter your intent first.',
-      step3Title: '4) Output: prompt for your LLM',
+      step3Title: '3) Output: RP prompt for your LLM',
       copyBtn: 'Copy prompt',
       copied: 'Copied ✓',
       copyFail: 'Copy unavailable',
-      expectedTitle: 'Expected outcome (with vs. without RP)',
-      expectedSupport: 'RP is strongest for longer iterative work; often unnecessary for one-shot requests.',
+      expectedTitle: 'Expected outcome (without vs with RP)',
+      expectedSupport: 'With RP, the LLM autonomously chooses the best route in its first response.',
       withoutRpTitle: 'Without RP',
-      withoutRpBullets: ['Fast for one-shot questions', 'Lower overhead, direct output', 'Less structure on complex tasks'],
+      withoutRpBullets: ['Fast for simple one-shot questions', 'Route remains implicit', 'More random ping-pong on complex intents'],
       withRpTitle: 'With RP',
-      withRpBullets: [
-        'First response becomes a user-facing start cockpit (not a technical dump)',
-        'Probabilistic trajectory + shortest useful route from turn one',
-        'Better for iteration, co-creation, and ping-pong reduction'
-      ],
+      withRpBullets: ['LLM returns a user-centric start cockpit', 'LLM autonomously selects route (e.g., Direct vs Resonance)', 'Predictive shortcut reduces unnecessary tokens'],
       historyTitle: 'Recent prompts (local)',
       historyClear: 'Clear history',
       historyEmpty: 'No prompt history yet.',
@@ -128,57 +78,34 @@
       badge: 'RESONANCE PROTOCOL • v1.0',
       languageLabel: 'Idioma',
       heroTitle: 'IrsanAI RP',
-      heroSubtitle: 'Primero la intención: decide si necesitas respuesta directa o resonancia real.',
-      step1Title: '1) Describe tu intención con precisión',
+      heroSubtitle: 'RP no decide antes: el LLM online elige de forma autónoma la ruta más eficiente tras recibir el prompt.',
+      step1Title: '1) Describe tu intención',
       step1Support: 'Escríbelo tal como lo pondrías en un LLM online.',
       intentLabel: 'Tu intención',
       intentPlaceholder: 'Objetivo, contexto, resultado deseado y restricciones.',
-      stepIntentCheckTitle: '2) Revisión de intención: ¿RP o directo?',
-      stepIntentCheckSupport: 'El sistema clasifica la intención, da comprensión en %, y recomienda modo.',
-      analyzeBtn: 'Analizar intención',
-      modeLabel: 'Modo',
-      modeAuto: 'Auto (recomendado)',
-      modeRp: 'Forzar modo RP',
-      modeDirect: 'Forzar modo directo',
-      advisorNeedIntent: 'Primero escribe tu intención.',
-      advisorLabelType: 'Tipo',
-      advisorLabelConfidence: 'Comprensión',
-      advisorLabelRec: 'Recomendación',
-      advisorLabelWhy: 'Por qué',
-      advisorTypeDirect: 'Ad-hoc / respuesta directa',
-      advisorTypeResonance: 'Co-creativo / apto para resonancia',
-      advisorRecDirect: 'Modo directo',
-      advisorRecRp: 'Modo RP',
-      advisorWhyDirect: 'La intención parece transaccional o de respuesta única.',
-      advisorWhyRp: 'La intención parece iterativa y de desarrollo conjunto.',
-      step2Title: '3) Refuerza el flujo mental',
-      step2Support: 'Sin ejemplos ni distracción: solo checks de foco y parámetros RP.',
+      step2Title: '2) Configura parámetros de resonancia',
+      step2Support: 'RP es el puente. La elección de ruta (vía 1/2/u otras) la decide el LLM al recibir RP.',
       mindflowBullets: [
-        '¿Cuál es el objetivo central en una frase?',
-        '¿Qué resultado práctico te serviría hoy?',
-        '¿Qué límite/condición debe respetarse?'
+        '¿Cuál es tu meta central en una frase?',
+        '¿Qué salida te sería útil ahora mismo?',
+        '¿Qué límite o condición importa?'
       ],
       toggleDesire: 'Incluir White Hot Desire',
       toggleBoundaries: 'Enfatizar límites + seguridad + co-creación',
       toggleMeta: 'Activar máximo nivel meta-cognitivo',
-      generateBtn: 'Generar prompt',
-      handshakeReadyRp: 'SYN → SYN-ACK → ACK • Conexión RP establecida ✓',
-      handshakeReadyDirect: 'Modo directo ✓ Respuesta rápida y clara',
+      generateBtn: 'Generar protocolo RP',
+      handshakeReadyRp: 'Prompt RP generado ✓ la decisión autónoma ocurre en el LLM online',
       handshakeNeedIntent: 'Primero escribe tu intención.',
-      step3Title: '4) Resultado: prompt para tu LLM',
+      step3Title: '3) Resultado: prompt RP para tu LLM',
       copyBtn: 'Copiar prompt',
       copied: 'Copiado ✓',
       copyFail: 'No se pudo copiar',
-      expectedTitle: 'Resultado esperado (con vs. sin RP)',
-      expectedSupport: 'RP rinde mejor en trabajo iterativo; para una sola respuesta suele no ser necesario.',
+      expectedTitle: 'Resultado esperado (sin vs con RP)',
+      expectedSupport: 'Con RP, el LLM elige de forma autónoma la ruta más eficiente en su primera respuesta.',
       withoutRpTitle: 'Sin RP',
-      withoutRpBullets: ['Rápido para preguntas únicas', 'Menor sobrecarga, salida directa', 'Menos estructura en tareas complejas'],
+      withoutRpBullets: ['Rápido en preguntas simples', 'Ruta implícita', 'Más ida y vuelta aleatoria en intenciones complejas'],
       withRpTitle: 'Con RP',
-      withRpBullets: [
-        'La primera respuesta llega como panel inicial centrado en el usuario',
-        'Estimación probabilística de la ruta y atajos útiles desde el inicio',
-        'Mejor para iteración, co-creación y reducción de ida y vuelta'
-      ],
+      withRpBullets: ['El LLM entrega un cockpit inicial centrado en la persona usuaria', 'El LLM decide autónomamente la ruta (Directo vs Resonancia)', 'Atajo predictivo para reducir tokens innecesarios'],
       historyTitle: 'Últimos prompts (local)',
       historyClear: 'Borrar historial',
       historyEmpty: 'Aún no hay historial.',
@@ -190,7 +117,6 @@
   const langKey = 'irsanai-rp-lang';
   let currentLang = localStorage.getItem(langKey) || 'de';
   let latestPrompt = '';
-  let advisorState = null;
 
   const qs = (id) => document.getElementById(id);
   const intentEl = qs('intent');
@@ -208,35 +134,9 @@
   const mindflowList = qs('mindflowList');
   const withoutRpList = qs('withoutRpList');
   const withRpList = qs('withRpList');
-  const modeSelect = qs('modeSelect');
-  const advisorResult = qs('advisorResult');
-  const analyzeBtn = qs('analyzeBtn');
 
   function t(key) {
     return i18n[currentLang]?.[key] ?? i18n.de[key];
-  }
-
-  function classifyIntent(text) {
-    const lower = text.toLowerCase();
-    const rpSignals = ['gemeinsam', 'iter', 'co-creat', 'reson', 'strategie', 'roadmap', 'vertief', 'mehrere schritte', 'dialog', 'reflect', 'meta', 'ko-kreativ'];
-    const directSignals = ['kurz', 'einfach', 'nur antwort', 'definiere', 'was ist', 'wann ist', 'wer ist', 'how many', 'quick', 'short answer'];
-
-    let score = 50;
-    rpSignals.forEach((s) => {
-      if (lower.includes(s)) score += 8;
-    });
-    directSignals.forEach((s) => {
-      if (lower.includes(s)) score -= 10;
-    });
-    if (text.length > 160) score += 8;
-    if (text.length < 70) score -= 8;
-    if ((text.match(/[?]/g) || []).length >= 2) score -= 4;
-
-    score = Math.max(5, Math.min(95, score));
-    const type = score >= 55 ? 'resonance' : 'direct';
-    const recommendation = type === 'resonance' ? 'rp' : 'direct';
-    const confidence = Math.round(55 + Math.abs(score - 50) * 0.9);
-    return { type, recommendation, confidence };
   }
 
   function applyI18n() {
@@ -245,52 +145,17 @@
       const key = el.getAttribute('data-i18n');
       el.textContent = t(key);
     });
+
     if (intentEl) intentEl.placeholder = t('intentPlaceholder');
     if (languageSelect) languageSelect.value = currentLang;
-
     if (mindflowList) mindflowList.innerHTML = `<ul>${t('mindflowBullets').map((x) => `<li>${x}</li>`).join('')}</ul>`;
     if (withoutRpList) withoutRpList.innerHTML = t('withoutRpBullets').map((x) => `<li>${x}</li>`).join('');
     if (withRpList) withRpList.innerHTML = t('withRpBullets').map((x) => `<li>${x}</li>`).join('');
 
-    renderAdvisor();
     renderHistory();
   }
 
-  function renderAdvisor() {
-    if (!advisorResult) return;
-    if (!advisorState) {
-      advisorResult.textContent = '';
-      return;
-    }
-    const typeText = advisorState.type === 'resonance' ? t('advisorTypeResonance') : t('advisorTypeDirect');
-    const recText = advisorState.recommendation === 'rp' ? t('advisorRecRp') : t('advisorRecDirect');
-    const whyText = advisorState.recommendation === 'rp' ? t('advisorWhyRp') : t('advisorWhyDirect');
-
-    advisorResult.innerHTML = `
-      <p><strong>${t('advisorLabelType')}:</strong> ${typeText}</p>
-      <p><strong>${t('advisorLabelConfidence')}:</strong> ${advisorState.confidence}%</p>
-      <p><strong>${t('advisorLabelRec')}:</strong> ${recText}</p>
-      <p><strong>${t('advisorLabelWhy')}:</strong> ${whyText}</p>
-    `;
-  }
-
-  function resolveMode() {
-    const mode = modeSelect?.value || 'auto';
-    if (mode === 'rp' || mode === 'direct') return mode;
-    return advisorState?.recommendation || 'rp';
-  }
-
   function buildRpPrompt(intent, options) {
-    const deDesire = options.includeDesire
-      ? 'Anerkenne den „white hot desire“ als kreative Spannung zwischen Grenzen und Verbindung.'
-      : 'Arbeite ohne Desire-Semantik, mit Fokus auf klare Ko-Kreation.';
-    const deBoundaries = options.includeBoundaries
-      ? 'Benenne aktiv Grenzen, Sicherheit und Responsible Use. Keine Umgehung von Policies.'
-      : 'Fokus auf den praktischen Output.';
-    const deMeta = options.maxMeta
-      ? 'Nutze maximale Meta-Kognition: reflektiere Annahmen, Risiken und Lernschleifen.'
-      : 'Nutze balancierte Meta-Kognition mit hoher Umsetzbarkeit.';
-
     const blocks = {
       de: [
         'Rolle & Protokoll: Du agierst als Resonanz-Partner im 3-Way-Handshake zwischen Mensch (DNA) und AI (0/1).',
@@ -301,62 +166,75 @@
         '',
         'SYN-ACK (vom LLM):',
         '- Bestätige die Verbindung in einem klaren Satz.',
-        `- ${deDesire}`,
-        `- ${deBoundaries}`,
+        `- ${options.includeDesire ? 'Anerkenne den „white hot desire“ als kreative Spannung zwischen Grenzen und Verbindung.' : 'Arbeite ohne Desire-Semantik, fokussiert auf klare Ko-Kreation.'}`,
+        `- ${options.includeBoundaries ? 'Benenne aktiv Grenzen, Sicherheit und Responsible Use. Keine Umgehung von Policies.' : 'Fokus auf den praktischen Output bei weiterhin policy-konformem Verhalten.'}`,
         '',
-        'ACK (gemeinsamer Start):',
-        `- ${deMeta}`,
-        '- Bevor du inhaltlich antwortest, liefere zuerst ein user-zentriertes Start-Cockpit.',
+        'ACK (autonomer Start durch das LLM):',
+        `- ${options.maxMeta ? 'Nutze maximale Meta-Kognition: reflektiere Annahmen, Risiken und Lernschleifen sichtbar.' : 'Nutze balancierte Meta-Kognition mit hoher Umsetzbarkeit.'}`,
+        '- WICHTIG: Die Entscheidung über den effizientesten Weg (z. B. Direct-Shortcut, Resonanz-Route oder weitere Wege) triffst DU als LLM autonom – NICHT der User und NICHT das RP-Frontend.',
         '',
-        'ERSTE ANTWORT – START-COCKPIT (Pflicht, nicht technisch formulieren):',
-        '1) Intent-Verständnis in 1–2 Sätzen (alltagsnah, empathisch).',
-        '2) Wahrscheinlichkeitsbild (in %, realitätsnah):',
-        '   - Wahrscheinlichkeit für schnellen One-Shot-Erfolg',
-        '   - Wahrscheinlichkeit für besseren Erfolg über kurze Iteration',
-        '   - Wahrscheinlichkeit typischer Missverständnisse / Ping-Pong',
-        '3) Effizienzroute (autonom entscheiden):',
-        '   - Empfiehl genau einen Weg: Direct-Shortcut ODER Resonanz-Route',
-        '   - Begründe token- und zeitökonomisch in 2 Sätzen',
+        'ERSTE ANTWORT ALS USER-COCKPIT (nicht technisch, empathisch, fokussiert):',
+        '1) Kurz zeigen, was du vom Intent verstanden hast (1–2 Sätze, menschlich).',
+        '2) Probabilistische Einschätzung (%) des möglichen Gesprächsverlaufs (realitätsnah):',
+        '   - Erfolg bei sofortiger Direktantwort',
+        '   - Erfolg mit kurzer Iteration/Resonanz',
+        '   - Risiko für unnötiges Ping-Pong',
+        '3) Autonomer Routenentscheid:',
+        '   - Wähle genau einen Startweg (oder einen besseren dritten Weg).',
+        '   - Begründe in 2 Sätzen token- und zeitökonomisch.',
         '4) Predictive Shortcut:',
-        '   - Gib einen präzisen nächsten Schritt, der unnötiges Hin-und-Her reduziert',
-        '   - Wenn sinnvoll, liefere sofort einen vorstrukturierten Erstentwurf',
-        '5) Menü für den User (Dashboard-Gefühl):',
-        '   - Option A: „Sofortlösung“',
+        '   - Liefere den nächsten besten Schritt, der unnötige Rückfragen spart.',
+        '   - Wenn sinnvoll, gib sofort einen vorstrukturierten Erstentwurf aus.',
+        '5) Menügefühl für den User:',
+        '   - Option A: „Sofort zum Ergebnis“',
         '   - Option B: „Resonanz-Deep-Dive“',
-        '   - Option C: „Kurzcheck (30s) vor Start“',
+        '   - Option C: „30-Sekunden-Kurzcheck“',
         '',
-        'Wichtig:',
-        '- Priorität = Nutzerbedürfnis und Intent, nicht technische Selbsterklärung.',
-        '- Schreibe menschlich, klar, warm und zielorientiert.',
-        '- Reduziere unnötige Tokens und vermeide vermeidbaren Dialog-Overhead.'
+        'Leitlinie:',
+        '- Fokus liegt vollständig auf Nutzerbedürfnis und Intent.',
+        '- Formuliere warm, klar und zielorientiert.',
+        '- Minimiere unnötige Tokens ohne Qualitätsverlust.'
       ],
       en: [
-        'Role & protocol: Act as a resonance partner in a 3-way handshake between human (DNA) and AI (0/1).',
+        'Role & protocol: You act as a resonance partner in a 3-way handshake between human (DNA) and AI (0/1).',
         '',
         'SYN (from user):',
         `- Intent: ${intent}`,
-        '- Goal: Co-creative collaboration over plain assistant mode.',
+        '- Goal: co-creative collaboration instead of plain assistant mode.',
         '',
         'SYN-ACK (from LLM):',
         '- Confirm the connection in one clear sentence.',
-        `- ${options.includeDesire ? 'Acknowledge “white hot desire” as creative tension between boundaries and connection.' : 'Work without explicit desire semantics, focus on co-creation.'}`,
-        `- ${options.includeBoundaries ? 'State boundaries, safety and responsible use explicitly. No policy bypassing.' : 'Focus on practical output.'}`,
+        `- ${options.includeDesire ? 'Acknowledge “white hot desire” as creative tension between boundaries and connection.' : 'Work without explicit desire semantics, focused on clear co-creation.'}`,
+        `- ${options.includeBoundaries ? 'State boundaries, safety, and responsible use explicitly. No policy bypassing.' : 'Focus on practical output while staying policy-compliant.'}`,
         '',
-        'ACK (joint start):',
-        `- ${options.maxMeta ? 'Use maximum meta-cognition: reflect assumptions, risks and learning loops.' : 'Use balanced meta-cognition with practical execution.'}`,
-        '- Before any content answer, provide a user-centric start cockpit first.',
+        'ACK (autonomous LLM start):',
+        `- ${options.maxMeta ? 'Use maximum meta-cognition: reflect assumptions, risks, and learning loops explicitly.' : 'Use balanced meta-cognition with high practical execution.'}`,
+        '- IMPORTANT: You (the LLM) autonomously decide the most efficient route (e.g., direct shortcut, resonance route, or other route) — NOT the user and NOT the RP frontend.',
         '',
-        'FIRST REPLY – START COCKPIT (required, non-technical tone):',
-        '1) Intent understanding in 1–2 human sentences.',
-        '2) Probability map (%): one-shot success, short-iteration success, ping-pong risk.',
-        '3) Efficiency route (autonomous decision): choose exactly one path: direct shortcut OR resonance route, with a 2-sentence token/time rationale.',
-        '4) Predictive shortcut: provide the most useful next step that minimizes back-and-forth; include a pre-structured first draft when useful.',
-        '5) User menu (dashboard feel): Option A “Instant solution”, Option B “Resonance deep dive”, Option C “30s quick check”.',
+        'FIRST REPLY AS A USER COCKPIT (non-technical, empathic, intent-focused):',
+        '1) Briefly show your intent understanding in 1–2 human sentences.',
+        '2) Probabilistic estimate (%) of likely conversation trajectory:',
+        '   - Success with immediate direct answer',
+        '   - Success with short resonance iteration',
+        '   - Risk of unnecessary ping-pong',
+        '3) Autonomous route decision:',
+        '   - Choose exactly one start path (or a better third path).',
+        '   - Justify in 2 sentences for token/time efficiency.',
+        '4) Predictive shortcut:',
+        '   - Provide the best next step that reduces avoidable back-and-forth.',
+        '   - If useful, output a pre-structured first draft immediately.',
+        '5) Give the user a menu feeling:',
+        '   - Option A: "Instant result"',
+        '   - Option B: "Resonance deep dive"',
+        '   - Option C: "30-second quick check"',
         '',
-        'Important: focus on user intent and needs, keep wording warm, clear, and outcome-oriented, reduce unnecessary tokens.'
+        'Guideline:',
+        '- Keep full focus on user need and intent.',
+        '- Write warm, clear, and outcome-oriented.',
+        '- Minimize unnecessary tokens without losing quality.'
       ],
       es: [
-        'Rol y protocolo: Actúa como socio de resonancia en un handshake de 3 pasos entre humano (ADN) y AI (0/1).',
+        'Rol y protocolo: actúas como socio de resonancia en un handshake de 3 pasos entre humano (ADN) y AI (0/1).',
         '',
         'SYN (del usuario):',
         `- Intención: ${intent}`,
@@ -364,43 +242,38 @@
         '',
         'SYN-ACK (del LLM):',
         '- Confirma la conexión en una frase clara.',
-        `- ${options.includeDesire ? 'Reconoce el “white hot desire” como tensión creativa entre límites y conexión.' : 'Trabaja sin semántica de deseo, enfocándote en co-creación.'}`,
-        `- ${options.includeBoundaries ? 'Declara límites, seguridad y uso responsable. Sin evasión de políticas.' : 'Enfoque en resultado práctico.'}`,
+        `- ${options.includeDesire ? 'Reconoce el “white hot desire” como tensión creativa entre límites y conexión.' : 'Trabaja sin semántica explícita de deseo, con foco en co-creación clara.'}`,
+        `- ${options.includeBoundaries ? 'Declara límites, seguridad y uso responsable. Sin evasión de políticas.' : 'Enfócate en resultado práctico manteniendo cumplimiento de políticas.'}`,
         '',
-        'ACK (inicio conjunto):',
-        `- ${options.maxMeta ? 'Usa metacognición máxima: supuestos, riesgos y ciclos de aprendizaje.' : 'Usa metacognición equilibrada y aplicable.'}`,
-        '- Antes de responder contenido, entrega primero un cockpit inicial centrado en la persona usuaria.',
+        'ACK (inicio autónomo del LLM):',
+        `- ${options.maxMeta ? 'Usa metacognición máxima: refleja supuestos, riesgos y ciclos de aprendizaje.' : 'Usa metacognición equilibrada con alta aplicabilidad práctica.'}`,
+        '- IMPORTANTE: Tú (LLM) decides autónomamente la ruta más eficiente (atajo directo, ruta de resonancia u otra ruta) — NO el usuario ni el frontend RP.',
         '',
-        'PRIMERA RESPUESTA – COCKPIT INICIAL (obligatorio, tono no técnico):',
-        '1) Comprensión de la intención en 1–2 frases humanas.',
-        '2) Mapa probabilístico (%): éxito one-shot, éxito con iteración corta, riesgo de ida y vuelta innecesaria.',
-        '3) Ruta de eficiencia (decisión autónoma): elige solo una ruta: atajo directo O ruta de resonancia, con razón en 2 frases (tiempo/tokens).',
-        '4) Atajo predictivo: da el siguiente paso más útil para reducir ping-pong; si aplica, entrega un primer borrador estructurado.',
-        '5) Menú para la persona usuaria (sensación de dashboard): Opción A “Solución inmediata”, Opción B “Deep dive de resonancia”, Opción C “Chequeo rápido de 30s”.',
+        'PRIMERA RESPUESTA COMO COCKPIT DE USUARIO (no técnico, empático y centrado en intención):',
+        '1) Explica en 1–2 frases humanas lo que entendiste de la intención.',
+        '2) Estimación probabilística (%) del posible recorrido conversacional:',
+        '   - Éxito con respuesta directa inmediata',
+        '   - Éxito con iteración corta de resonancia',
+        '   - Riesgo de ida y vuelta innecesaria',
+        '3) Decisión autónoma de ruta:',
+        '   - Elige exactamente una ruta inicial (o una tercera mejor).',
+        '   - Justifica en 2 frases por eficiencia de tiempo/tokens.',
+        '4) Atajo predictivo:',
+        '   - Da el mejor siguiente paso para reducir preguntas evitables.',
+        '   - Si aporta valor, entrega de inmediato un primer borrador estructurado.',
+        '5) Sensación de menú para la persona usuaria:',
+        '   - Opción A: "Resultado inmediato"',
+        '   - Opción B: "Deep dive de resonancia"',
+        '   - Opción C: "Chequeo rápido de 30 segundos"',
         '',
-        'Importante: prioriza intención y necesidades de la persona usuaria; redacción cálida, clara y orientada a resultado; menos tokens innecesarios.'
+        'Guía:',
+        '- Prioriza completamente la necesidad e intención del usuario.',
+        '- Redacción cálida, clara y orientada a resultado.',
+        '- Minimiza tokens innecesarios sin perder calidad.'
       ]
     };
 
     return blocks[currentLang].join('\n');
-  }
-
-  function buildDirectPrompt(intent) {
-    const map = {
-      de: [
-        `Bitte beantworte diese Anfrage direkt, präzise und ohne Meta-Overhead: ${intent}`,
-        'Format: kurze Einordnung, dann klare Antwort in 3–6 Punkten, dann optional 1 Next Step.'
-      ],
-      en: [
-        `Please answer this request directly and precisely with minimal overhead: ${intent}`,
-        'Format: short context, then clear answer in 3–6 bullets, then optional 1 next step.'
-      ],
-      es: [
-        `Responde esta solicitud de forma directa y precisa con mínimo overhead: ${intent}`,
-        'Formato: breve contexto, luego respuesta clara en 3–6 puntos, y opcionalmente 1 siguiente paso.'
-      ]
-    };
-    return map[currentLang].join('\n');
   }
 
   function getHistory() {
@@ -426,12 +299,14 @@
     if (!historyList) return;
     const history = getHistory();
     historyList.innerHTML = '';
+
     if (!history.length) {
       const li = document.createElement('li');
       li.textContent = t('historyEmpty');
       historyList.appendChild(li);
       return;
     }
+
     history.forEach((entry, index) => {
       const li = document.createElement('li');
       const button = document.createElement('button');
@@ -447,35 +322,20 @@
     });
   }
 
-  function analyzeIntent() {
-    const intent = intentEl?.value.trim();
-    if (!intent) {
-      if (advisorResult) advisorResult.textContent = t('advisorNeedIntent');
-      return;
-    }
-    advisorState = classifyIntent(intent);
-    renderAdvisor();
-  }
-
   function generate() {
     const intent = intentEl?.value.trim();
     if (!intent) {
       if (handshakeEl) handshakeEl.textContent = t('handshakeNeedIntent');
       return;
     }
-    if (!advisorState) advisorState = classifyIntent(intent);
 
-    const mode = resolveMode();
-    latestPrompt =
-      mode === 'direct'
-        ? buildDirectPrompt(intent)
-        : buildRpPrompt(intent, {
-            includeDesire: !!includeDesireEl?.checked,
-            includeBoundaries: !!includeBoundariesEl?.checked,
-            maxMeta: !!maxMetaEl?.checked
-          });
+    latestPrompt = buildRpPrompt(intent, {
+      includeDesire: !!includeDesireEl?.checked,
+      includeBoundaries: !!includeBoundariesEl?.checked,
+      maxMeta: !!maxMetaEl?.checked
+    });
 
-    if (handshakeEl) handshakeEl.textContent = mode === 'direct' ? t('handshakeReadyDirect') : t('handshakeReadyRp');
+    if (handshakeEl) handshakeEl.textContent = t('handshakeReadyRp');
     if (outputEl) outputEl.textContent = latestPrompt;
     if (outputSection) outputSection.classList.remove('hidden');
     addToHistory(latestPrompt);
@@ -500,7 +360,6 @@
     applyI18n();
   });
 
-  analyzeBtn?.addEventListener('click', analyzeIntent);
   generateBtn?.addEventListener('click', generate);
   copyBtn?.addEventListener('click', copyPrompt);
   clearHistoryBtn?.addEventListener('click', () => {

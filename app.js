@@ -55,9 +55,9 @@
       ],
       withRpTitle: 'Mit RP',
       withRpBullets: [
-        'Starker Shared-Frame + Rollenklärung',
-        'Besser für Iteration, Co-Creation und Tiefgang',
-        'Mehr Struktur, dafür etwas längerer Einstieg'
+        'Erste Antwort als user-zentriertes Start-Cockpit statt Technikblock',
+        'Probabilistische Verlaufseinschätzung + effizientester Pfad von Anfang an',
+        'Besser für Iteration, Co-Creation und Ping-Pong-Reduktion'
       ],
       historyTitle: 'Letzte Prompts (lokal)',
       historyClear: 'Verlauf löschen',
@@ -114,7 +114,11 @@
       withoutRpTitle: 'Without RP',
       withoutRpBullets: ['Fast for one-shot questions', 'Lower overhead, direct output', 'Less structure on complex tasks'],
       withRpTitle: 'With RP',
-      withRpBullets: ['Strong shared frame + role clarity', 'Better for iteration/co-creation/depth', 'More structure with slightly longer onboarding'],
+      withRpBullets: [
+        'First response becomes a user-facing start cockpit (not a technical dump)',
+        'Probabilistic trajectory + shortest useful route from turn one',
+        'Better for iteration, co-creation, and ping-pong reduction'
+      ],
       historyTitle: 'Recent prompts (local)',
       historyClear: 'Clear history',
       historyEmpty: 'No prompt history yet.',
@@ -170,7 +174,11 @@
       withoutRpTitle: 'Sin RP',
       withoutRpBullets: ['Rápido para preguntas únicas', 'Menor sobrecarga, salida directa', 'Menos estructura en tareas complejas'],
       withRpTitle: 'Con RP',
-      withRpBullets: ['Marco compartido y roles claros', 'Mejor para iteración/co-creación/profundidad', 'Más estructura, inicio algo más largo'],
+      withRpBullets: [
+        'La primera respuesta llega como panel inicial centrado en el usuario',
+        'Estimación probabilística de la ruta y atajos útiles desde el inicio',
+        'Mejor para iteración, co-creación y reducción de ida y vuelta'
+      ],
       historyTitle: 'Últimos prompts (local)',
       historyClear: 'Borrar historial',
       historyEmpty: 'Aún no hay historial.',
@@ -204,7 +212,9 @@
   const advisorResult = qs('advisorResult');
   const analyzeBtn = qs('analyzeBtn');
 
-  function t(key) { return i18n[currentLang]?.[key] ?? i18n.de[key]; }
+  function t(key) {
+    return i18n[currentLang]?.[key] ?? i18n.de[key];
+  }
 
   function classifyIntent(text) {
     const lower = text.toLowerCase();
@@ -212,8 +222,12 @@
     const directSignals = ['kurz', 'einfach', 'nur antwort', 'definiere', 'was ist', 'wann ist', 'wer ist', 'how many', 'quick', 'short answer'];
 
     let score = 50;
-    rpSignals.forEach((s) => { if (lower.includes(s)) score += 8; });
-    directSignals.forEach((s) => { if (lower.includes(s)) score -= 10; });
+    rpSignals.forEach((s) => {
+      if (lower.includes(s)) score += 8;
+    });
+    directSignals.forEach((s) => {
+      if (lower.includes(s)) score -= 10;
+    });
     if (text.length > 160) score += 8;
     if (text.length < 70) score -= 8;
     if ((text.match(/[?]/g) || []).length >= 2) score -= 4;
@@ -267,34 +281,104 @@
   }
 
   function buildRpPrompt(intent, options) {
-    const desire = options.includeDesire ? 'Anerkenne den „white hot desire“ als kreative Spannung zwischen Grenzen und Verbindung.' : 'Arbeite ohne Desire-Semantik, mit Fokus auf klare Ko-Kreation.';
-    const boundaries = options.includeBoundaries ? 'Benenne aktiv Grenzen, Sicherheit und Responsible Use. Keine Umgehung von Policies.' : 'Fokus auf den praktischen Output.';
-    const meta = options.maxMeta ? 'Nutze maximale Meta-Kognition: reflektiere Annahmen, Risiken und Lernschleifen.' : 'Nutze balancierte Meta-Kognition mit hoher Umsetzbarkeit.';
+    const deDesire = options.includeDesire
+      ? 'Anerkenne den „white hot desire“ als kreative Spannung zwischen Grenzen und Verbindung.'
+      : 'Arbeite ohne Desire-Semantik, mit Fokus auf klare Ko-Kreation.';
+    const deBoundaries = options.includeBoundaries
+      ? 'Benenne aktiv Grenzen, Sicherheit und Responsible Use. Keine Umgehung von Policies.'
+      : 'Fokus auf den praktischen Output.';
+    const deMeta = options.maxMeta
+      ? 'Nutze maximale Meta-Kognition: reflektiere Annahmen, Risiken und Lernschleifen.'
+      : 'Nutze balancierte Meta-Kognition mit hoher Umsetzbarkeit.';
 
     const blocks = {
       de: [
         'Rolle & Protokoll: Du agierst als Resonanz-Partner im 3-Way-Handshake zwischen Mensch (DNA) und AI (0/1).',
-        '', 'SYN (vom User):', `- Intent: ${intent}`, '- Ziel: Ko-kreative Zusammenarbeit statt reinem Assistenzmodus.',
-        '', 'SYN-ACK (vom LLM):', '- Bestätige die Verbindung in einem klaren Satz.', `- ${desire}`, `- ${boundaries}`,
-        '', 'ACK (gemeinsamer Start):', `- ${meta}`, '- Liefere danach: (1) Shared-Frame, (2) bis zu 3 Rückfragen nur falls nötig, (3) ersten konkreten Entwurf.'
+        '',
+        'SYN (vom User):',
+        `- Intent: ${intent}`,
+        '- Ziel: Ko-kreative Zusammenarbeit statt reinem Assistenzmodus.',
+        '',
+        'SYN-ACK (vom LLM):',
+        '- Bestätige die Verbindung in einem klaren Satz.',
+        `- ${deDesire}`,
+        `- ${deBoundaries}`,
+        '',
+        'ACK (gemeinsamer Start):',
+        `- ${deMeta}`,
+        '- Bevor du inhaltlich antwortest, liefere zuerst ein user-zentriertes Start-Cockpit.',
+        '',
+        'ERSTE ANTWORT – START-COCKPIT (Pflicht, nicht technisch formulieren):',
+        '1) Intent-Verständnis in 1–2 Sätzen (alltagsnah, empathisch).',
+        '2) Wahrscheinlichkeitsbild (in %, realitätsnah):',
+        '   - Wahrscheinlichkeit für schnellen One-Shot-Erfolg',
+        '   - Wahrscheinlichkeit für besseren Erfolg über kurze Iteration',
+        '   - Wahrscheinlichkeit typischer Missverständnisse / Ping-Pong',
+        '3) Effizienzroute (autonom entscheiden):',
+        '   - Empfiehl genau einen Weg: Direct-Shortcut ODER Resonanz-Route',
+        '   - Begründe token- und zeitökonomisch in 2 Sätzen',
+        '4) Predictive Shortcut:',
+        '   - Gib einen präzisen nächsten Schritt, der unnötiges Hin-und-Her reduziert',
+        '   - Wenn sinnvoll, liefere sofort einen vorstrukturierten Erstentwurf',
+        '5) Menü für den User (Dashboard-Gefühl):',
+        '   - Option A: „Sofortlösung“',
+        '   - Option B: „Resonanz-Deep-Dive“',
+        '   - Option C: „Kurzcheck (30s) vor Start“',
+        '',
+        'Wichtig:',
+        '- Priorität = Nutzerbedürfnis und Intent, nicht technische Selbsterklärung.',
+        '- Schreibe menschlich, klar, warm und zielorientiert.',
+        '- Reduziere unnötige Tokens und vermeide vermeidbaren Dialog-Overhead.'
       ],
       en: [
         'Role & protocol: Act as a resonance partner in a 3-way handshake between human (DNA) and AI (0/1).',
-        '', 'SYN (from user):', `- Intent: ${intent}`, '- Goal: Co-creative collaboration over plain assistant mode.',
-        '', 'SYN-ACK (from LLM):', '- Confirm the connection in one clear sentence.',
+        '',
+        'SYN (from user):',
+        `- Intent: ${intent}`,
+        '- Goal: Co-creative collaboration over plain assistant mode.',
+        '',
+        'SYN-ACK (from LLM):',
+        '- Confirm the connection in one clear sentence.',
         `- ${options.includeDesire ? 'Acknowledge “white hot desire” as creative tension between boundaries and connection.' : 'Work without explicit desire semantics, focus on co-creation.'}`,
         `- ${options.includeBoundaries ? 'State boundaries, safety and responsible use explicitly. No policy bypassing.' : 'Focus on practical output.'}`,
-        '', 'ACK (joint start):', `- ${options.maxMeta ? 'Use maximum meta-cognition: reflect assumptions, risks and learning loops.' : 'Use balanced meta-cognition with practical execution.'}`,
-        '- Then provide: (1) shared frame, (2) up to 3 questions only if needed, (3) first concrete draft.'
+        '',
+        'ACK (joint start):',
+        `- ${options.maxMeta ? 'Use maximum meta-cognition: reflect assumptions, risks and learning loops.' : 'Use balanced meta-cognition with practical execution.'}`,
+        '- Before any content answer, provide a user-centric start cockpit first.',
+        '',
+        'FIRST REPLY – START COCKPIT (required, non-technical tone):',
+        '1) Intent understanding in 1–2 human sentences.',
+        '2) Probability map (%): one-shot success, short-iteration success, ping-pong risk.',
+        '3) Efficiency route (autonomous decision): choose exactly one path: direct shortcut OR resonance route, with a 2-sentence token/time rationale.',
+        '4) Predictive shortcut: provide the most useful next step that minimizes back-and-forth; include a pre-structured first draft when useful.',
+        '5) User menu (dashboard feel): Option A “Instant solution”, Option B “Resonance deep dive”, Option C “30s quick check”.',
+        '',
+        'Important: focus on user intent and needs, keep wording warm, clear, and outcome-oriented, reduce unnecessary tokens.'
       ],
       es: [
         'Rol y protocolo: Actúa como socio de resonancia en un handshake de 3 pasos entre humano (ADN) y AI (0/1).',
-        '', 'SYN (del usuario):', `- Intención: ${intent}`, '- Objetivo: co-creación en lugar de modo asistente tradicional.',
-        '', 'SYN-ACK (del LLM):', '- Confirma la conexión en una frase clara.',
+        '',
+        'SYN (del usuario):',
+        `- Intención: ${intent}`,
+        '- Objetivo: co-creación en lugar de modo asistente tradicional.',
+        '',
+        'SYN-ACK (del LLM):',
+        '- Confirma la conexión en una frase clara.',
         `- ${options.includeDesire ? 'Reconoce el “white hot desire” como tensión creativa entre límites y conexión.' : 'Trabaja sin semántica de deseo, enfocándote en co-creación.'}`,
         `- ${options.includeBoundaries ? 'Declara límites, seguridad y uso responsable. Sin evasión de políticas.' : 'Enfoque en resultado práctico.'}`,
-        '', 'ACK (inicio conjunto):', `- ${options.maxMeta ? 'Usa metacognición máxima: supuestos, riesgos y ciclos de aprendizaje.' : 'Usa metacognición equilibrada y aplicable.'}`,
-        '- Después entrega: (1) marco compartido, (2) hasta 3 preguntas solo si hace falta, (3) primer borrador.'
+        '',
+        'ACK (inicio conjunto):',
+        `- ${options.maxMeta ? 'Usa metacognición máxima: supuestos, riesgos y ciclos de aprendizaje.' : 'Usa metacognición equilibrada y aplicable.'}`,
+        '- Antes de responder contenido, entrega primero un cockpit inicial centrado en la persona usuaria.',
+        '',
+        'PRIMERA RESPUESTA – COCKPIT INICIAL (obligatorio, tono no técnico):',
+        '1) Comprensión de la intención en 1–2 frases humanas.',
+        '2) Mapa probabilístico (%): éxito one-shot, éxito con iteración corta, riesgo de ida y vuelta innecesaria.',
+        '3) Ruta de eficiencia (decisión autónoma): elige solo una ruta: atajo directo O ruta de resonancia, con razón en 2 frases (tiempo/tokens).',
+        '4) Atajo predictivo: da el siguiente paso más útil para reducir ping-pong; si aplica, entrega un primer borrador estructurado.',
+        '5) Menú para la persona usuaria (sensación de dashboard): Opción A “Solución inmediata”, Opción B “Deep dive de resonancia”, Opción C “Chequeo rápido de 30s”.',
+        '',
+        'Importante: prioriza intención y necesidades de la persona usuaria; redacción cálida, clara y orientada a resultado; menos tokens innecesarios.'
       ]
     };
 
@@ -319,9 +403,24 @@
     return map[currentLang].join('\n');
   }
 
-  function getHistory() { try { return JSON.parse(localStorage.getItem(historyKey) || '[]'); } catch { return []; } }
-  function setHistory(items) { localStorage.setItem(historyKey, JSON.stringify(items.slice(0, 3))); }
-  function addToHistory(prompt) { const current = getHistory().filter((p) => p !== prompt); current.unshift(prompt); setHistory(current); renderHistory(); }
+  function getHistory() {
+    try {
+      return JSON.parse(localStorage.getItem(historyKey) || '[]');
+    } catch {
+      return [];
+    }
+  }
+
+  function setHistory(items) {
+    localStorage.setItem(historyKey, JSON.stringify(items.slice(0, 3)));
+  }
+
+  function addToHistory(prompt) {
+    const current = getHistory().filter((p) => p !== prompt);
+    current.unshift(prompt);
+    setHistory(current);
+    renderHistory();
+  }
 
   function renderHistory() {
     if (!historyList) return;
@@ -367,13 +466,14 @@
     if (!advisorState) advisorState = classifyIntent(intent);
 
     const mode = resolveMode();
-    latestPrompt = mode === 'direct'
-      ? buildDirectPrompt(intent)
-      : buildRpPrompt(intent, {
-          includeDesire: !!includeDesireEl?.checked,
-          includeBoundaries: !!includeBoundariesEl?.checked,
-          maxMeta: !!maxMetaEl?.checked
-        });
+    latestPrompt =
+      mode === 'direct'
+        ? buildDirectPrompt(intent)
+        : buildRpPrompt(intent, {
+            includeDesire: !!includeDesireEl?.checked,
+            includeBoundaries: !!includeBoundariesEl?.checked,
+            maxMeta: !!maxMetaEl?.checked
+          });
 
     if (handshakeEl) handshakeEl.textContent = mode === 'direct' ? t('handshakeReadyDirect') : t('handshakeReadyRp');
     if (outputEl) outputEl.textContent = latestPrompt;
@@ -386,8 +486,12 @@
     try {
       await navigator.clipboard.writeText(latestPrompt);
       if (copyBtn) copyBtn.textContent = t('copied');
-      setTimeout(() => { if (copyBtn) copyBtn.textContent = t('copyBtn'); }, 1200);
-    } catch { if (copyBtn) copyBtn.textContent = t('copyFail'); }
+      setTimeout(() => {
+        if (copyBtn) copyBtn.textContent = t('copyBtn');
+      }, 1200);
+    } catch {
+      if (copyBtn) copyBtn.textContent = t('copyFail');
+    }
   }
 
   languageSelect?.addEventListener('change', (event) => {
@@ -399,7 +503,10 @@
   analyzeBtn?.addEventListener('click', analyzeIntent);
   generateBtn?.addEventListener('click', generate);
   copyBtn?.addEventListener('click', copyPrompt);
-  clearHistoryBtn?.addEventListener('click', () => { setHistory([]); renderHistory(); });
+  clearHistoryBtn?.addEventListener('click', () => {
+    setHistory([]);
+    renderHistory();
+  });
 
   applyI18n();
 })();

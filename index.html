@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="IrsanAI Resonance Protocol: Fokusfreundliche Prompt-Erstellung mit 3-Way-Handshake für bessere Mensch-LLM Zusammenarbeit."
+      content="IrsanAI Resonance Protocol: Fokusfreundliche Prompt-Erstellung mit Intent-Klassifizierung für RP-vs-Direct Einsatz." 
     />
     <title>IrsanAI RP v1.0 — Resonance Protocol</title>
     <link rel="stylesheet" href="styles.css" />
@@ -38,10 +38,27 @@
       </section>
 
       <section class="card">
+        <h2 data-i18n="stepIntentCheckTitle"></h2>
+        <p class="support-copy" data-i18n="stepIntentCheckSupport"></p>
+        <div class="advisor-controls">
+          <button id="analyzeBtn" class="secondary" data-i18n="analyzeBtn"></button>
+          <label class="mode-picker">
+            <span data-i18n="modeLabel"></span>
+            <select id="modeSelect" aria-label="Mode selector">
+              <option value="auto" data-i18n="modeAuto"></option>
+              <option value="rp" data-i18n="modeRp"></option>
+              <option value="direct" data-i18n="modeDirect"></option>
+            </select>
+          </label>
+        </div>
+        <div id="advisorResult" class="advisor-result" aria-live="polite"></div>
+      </section>
+
+      <section class="card">
         <h2 data-i18n="step2Title"></h2>
         <p class="support-copy" data-i18n="step2Support"></p>
         <div class="mindflow-list" id="mindflowList"></div>
-        <div class="toggles">
+        <div class="toggles" id="rpOptions">
           <label><input type="checkbox" id="includeDesire" checked /> <span data-i18n="toggleDesire"></span></label>
           <label><input type="checkbox" id="includeBoundaries" checked /> <span data-i18n="toggleBoundaries"></span></label>
           <label><input type="checkbox" id="maxMeta" /> <span data-i18n="toggleMeta"></span></label>

@@ -1,43 +1,56 @@
 # IrsanAI-RP-v1.0 — Resonance Protocol
 
-Fokusorientierter, statischer Prompt-Generator für eine bessere Mensch-LLM Zusammenarbeit über ein strukturiertes 3-Way-Handshake-Pattern.
+Fokusorientierter, statischer Prompt-Generator für bessere Mensch-LLM Zusammenarbeit über ein strukturiertes 3-Way-Handshake-Pattern.
 
-## Was wurde verbessert?
+## Kern-Upgrade in dieser Version
 
-Auf Basis von UX-Feedback wurde die Oberfläche bewusst auf **kognitive Klarheit** optimiert:
+Diese Version adressiert die zentrale Frage: **Wann sollte RP überhaupt verwendet werden — und wann nicht?**
 
-- **Keine anklickbaren Intent-Beispiele** mehr (keine mentale Ablenkung vom eigenen Vorhaben)
-- **Mind-Flow Verstärker** statt Presets: kurze Fokusfragen, die den eigenen Gedankenkanal stabilisieren
-- **3-Schritt-Flow**:
-  1. Eigenes Vorhaben formulieren (wie in einem echten Online-LLM)
-  2. Denkfokus stabilisieren + Protokollparameter setzen
-  3. Resonanz-Prompt generieren und direkt nutzen
-- **Erwartetes Ergebnis transparent**: Vergleich „ohne RP“ vs. „mit RP“
-- **Mehrsprachig umschaltbar**: Deutsch, Englisch, Spanisch
+### Neu: Intent-Check vor der Prompt-Erzeugung
+
+Vor dem eigentlichen Prompt kann der Nutzer den Intent analysieren lassen:
+
+- Intent-Klassifikation: eher **Ad-hoc/Direct** oder **Ko-kreativ/Resonanzfähig**
+- Verständnisindikator in **Prozent**
+- Modus-Empfehlung: **Direct** oder **RP**
+- Override möglich: Auto / RP erzwingen / Direct erzwingen
+
+Damit wird RP gezielt dort eingesetzt, wo es wirklich Mehrwert hat (iterative, tiefe, länger laufende Gespräche).
+
+## UX-Prinzipien
+
+- Keine klickbaren Intent-Beispiele (keine kognitive Ablenkung)
+- Mind-Flow-Fragen statt Presets
+- 4-Schritt-Flow:
+  1. Intent schreiben
+  2. Intent klassifizieren (RP vs Direct)
+  3. Mind-Flow + RP-Parameter
+  4. Finalen Prompt erzeugen und kopieren
 
 ## Features
 
 - 100% static (HTML/CSS/JS), kein Backend
-- Mehrsprachigkeit via UI-Switch + lokaler Speicherung
-- Prompthistorie (lokal, letzte 3 Einträge)
-- Copy-to-clipboard mit Feedback
-- Responsive UI
+- Mehrsprachigkeit (Deutsch / Englisch / Spanisch)
+- Intent Advisor + Modusumschaltung (Auto/RP/Direct)
+- Lokale Prompt-Historie (letzte 3)
+- Copy-to-clipboard + responsive UI
 
 ## Dateien
 
-- `index.html` — Hauptoberfläche mit Schritt-Flow + Erwartungswert-Sektion
+- `index.html` — Hauptoberfläche mit Intent-Advisor, Schritt-Flow und Erwartungswert-Sektion
 - `generator-standalone.html` — kompakte Generatoransicht
-- `app.js` — I18n, Prompt-Builder, History, Copy-Flow
-- `styles.css` — visuelle Gestaltung und responsives Layout
+- `app.js` — I18n, Intent-Klassifizierung, Prompt-Building, History, Copy
+- `styles.css` — visuelles System und responsive Layouts
 - `LICENSE` — MIT
 
 ## Nutzung
 
-1. `index.html` im Browser öffnen [https://irsanai.github.io/IrsanAI-RP-v1.0/]
+1. `index.html` öffnen
 2. Sprache wählen (DE/EN/ES)
 3. Intent eintragen
-4. Optionen in Schritt 2 setzen
-5. Prompt generieren, kopieren, ins gewünschte LLM einfügen
+4. Intent analysieren (optional, empfohlen)
+5. Modus bestätigen (Auto/RP/Direct)
+6. Prompt erzeugen, kopieren, in ein Online-LLM einfügen
 
 ## Lizenz
 

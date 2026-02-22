@@ -33,7 +33,7 @@ Auf Basis von UX-Feedback wurde die Oberfläche bewusst auf **kognitive Klarheit
 
 ## Nutzung
 
-1. `index.html` im Browser öffnen
+1. `index.html` im Browser öffnen [https://irsanai.github.io/IrsanAI-RP-v1.0/]
 2. Sprache wählen (DE/EN/ES)
 3. Intent eintragen
 4. Optionen in Schritt 2 setzen

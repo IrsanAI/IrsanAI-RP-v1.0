@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="IrsanAI Resonance Protocol: Fokusfreundliche Prompt-Erstellung mit 3-Way-Handshake für bessere Mensch-LLM Zusammenarbeit."
+    />
+    <title>IrsanAI RP v1.0 — Resonance Protocol</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="aurora" aria-hidden="true"></div>
+
+    <main class="container" id="appRoot">
+      <header class="hero">
+        <div class="hero-topline">
+          <p class="badge" data-i18n="badge"></p>
+          <label class="language-picker" for="languageSelect">
+            <span data-i18n="languageLabel"></span>
+            <select id="languageSelect" aria-label="Language selector">
+              <option value="de">Deutsch</option>
+              <option value="en">English</option>
+              <option value="es">Español</option>
+            </select>
+          </label>
+        </div>
+        <h1 data-i18n="heroTitle"></h1>
+        <p class="subtitle" data-i18n="heroSubtitle"></p>
+      </header>
+
+      <section class="card">
+        <h2 data-i18n="step1Title"></h2>
+        <p class="support-copy" data-i18n="step1Support"></p>
+        <label for="intent" class="label" data-i18n="intentLabel"></label>
+        <textarea id="intent" rows="6"></textarea>
+      </section>
+
+      <section class="card">
+        <h2 data-i18n="step2Title"></h2>
+        <p class="support-copy" data-i18n="step2Support"></p>
+        <div class="mindflow-list" id="mindflowList"></div>
+        <div class="toggles">
+          <label><input type="checkbox" id="includeDesire" checked /> <span data-i18n="toggleDesire"></span></label>
+          <label><input type="checkbox" id="includeBoundaries" checked /> <span data-i18n="toggleBoundaries"></span></label>
+          <label><input type="checkbox" id="maxMeta" /> <span data-i18n="toggleMeta"></span></label>
+        </div>
+      </section>
+
+      <section class="card action-card">
+        <button id="generateBtn" class="primary" data-i18n="generateBtn"></button>
+        <div class="handshake" id="handshake" aria-live="polite"></div>
+      </section>
+
+      <section class="card output-card hidden" id="outputSection">
+        <div class="output-head">
+          <h2 data-i18n="step3Title"></h2>
+          <button id="copyBtn" class="secondary" data-i18n="copyBtn"></button>
+        </div>
+        <pre id="output"></pre>
+      </section>
+
+      <section class="card">
+        <h2 data-i18n="expectedTitle"></h2>
+        <p class="support-copy" data-i18n="expectedSupport"></p>
+        <div class="comparison-grid">
+          <article>
+            <h3 data-i18n="withoutRpTitle"></h3>
+            <ul id="withoutRpList"></ul>
+          </article>
+          <article>
+            <h3 data-i18n="withRpTitle"></h3>
+            <ul id="withRpList"></ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="history-head">
+          <h2 data-i18n="historyTitle"></h2>
+          <button id="clearHistoryBtn" class="ghost" data-i18n="historyClear"></button>
+        </div>
+        <ul id="historyList" class="history-list"></ul>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

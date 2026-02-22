@@ -7,32 +7,43 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <main class="container compact">
+    <main class="container compact" id="appRoot">
       <header class="hero">
-        <p class="badge">Standalone</p>
-        <h1>Resonance Prompt Generator</h1>
+        <div class="hero-topline">
+          <p class="badge" data-i18n="badge"></p>
+          <label class="language-picker" for="languageSelect">
+            <span data-i18n="languageLabel"></span>
+            <select id="languageSelect" aria-label="Language selector">
+              <option value="de">Deutsch</option>
+              <option value="en">English</option>
+              <option value="es">Español</option>
+            </select>
+          </label>
+        </div>
+        <h1 data-i18n="heroTitle"></h1>
       </header>
 
       <section class="card">
-        <label for="intent" class="label">Intent</label>
-        <textarea id="intent" rows="4" placeholder="Beschreibe dein Vorhaben..."></textarea>
+        <label for="intent" class="label" data-i18n="intentLabel"></label>
+        <textarea id="intent" rows="5"></textarea>
         <div class="toggles">
-          <label><input type="checkbox" id="includeDesire" checked /> White Hot Desire</label>
-          <label><input type="checkbox" id="includeBoundaries" checked /> Grenzen + Co-Kreation</label>
-          <label><input type="checkbox" id="maxMeta" /> Max Meta</label>
+          <label><input type="checkbox" id="includeDesire" checked /> <span data-i18n="toggleDesire"></span></label>
+          <label><input type="checkbox" id="includeBoundaries" checked /> <span data-i18n="toggleBoundaries"></span></label>
+          <label><input type="checkbox" id="maxMeta" /> <span data-i18n="toggleMeta"></span></label>
         </div>
-        <button id="generateBtn" class="primary">Generate</button>
+        <button id="generateBtn" class="primary" data-i18n="generateBtn"></button>
         <div class="handshake" id="handshake"></div>
       </section>
 
       <section class="card output-card hidden" id="outputSection">
         <div class="output-head">
-          <h2>Prompt</h2>
-          <button id="copyBtn" class="secondary">Copy</button>
+          <h2 data-i18n="step3Title"></h2>
+          <button id="copyBtn" class="secondary" data-i18n="copyBtn"></button>
         </div>
         <pre id="output"></pre>
       </section>
     </main>
+
     <script src="app.js"></script>
   </body>
 </html>

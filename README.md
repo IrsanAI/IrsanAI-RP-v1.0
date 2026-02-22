@@ -1,63 +1,44 @@
 # IrsanAI-RP-v1.0 — Resonance Protocol
 
-Ein produktionsreifes, statisches Portfolio-Repo für einen **Resonance Prompt Generator**.
+Fokusorientierter, statischer Prompt-Generator für eine bessere Mensch-LLM Zusammenarbeit über ein strukturiertes 3-Way-Handshake-Pattern.
 
-Das Ziel: Nutzer:innen starten mit ihrem bevorzugten LLM direkt auf einer höheren kollaborativen Ebene („Resonanz-Verbindung“) statt mit rein funktionalem Prompting.
+## Was wurde verbessert?
 
-## ✨ Features
+Auf Basis von UX-Feedback wurde die Oberfläche bewusst auf **kognitive Klarheit** optimiert:
 
-- **Resonanz-Engine (3-Way Handshake)**: SYN → SYN-ACK → ACK als strukturierter Start.
-- **Intent-first UX**: Nutzer-Intent steht im Zentrum der Prompt-Erzeugung.
-- **Preset-Intents**: Sofortstart mit kuratierten Einstiegspunkten.
-- **Erweiterte Schalter**:
-  - White Hot Desire explizit einbeziehen
-  - Grenzen, Sicherheit und Co-Kreation betonen
-  - Maximalen Meta-Kognitions-Level aktivieren
-- **One-click Copy** mit visuellem Feedback.
-- **Quick Links** zu Grok, ChatGPT, Claude.
-- **History (localStorage)**: Letzte Prompts lokal speichern und erneut laden.
-- **Responsive UI**: Mobile-first, dark/futuristic UI, barrierearme Kontraste.
-- **Zero Backend**: Reines HTML/CSS/JS, läuft lokal und auf GitHub Pages.
+- **Keine anklickbaren Intent-Beispiele** mehr (keine mentale Ablenkung vom eigenen Vorhaben)
+- **Mind-Flow Verstärker** statt Presets: kurze Fokusfragen, die den eigenen Gedankenkanal stabilisieren
+- **3-Schritt-Flow**:
+  1. Eigenes Vorhaben formulieren (wie in einem echten Online-LLM)
+  2. Denkfokus stabilisieren + Protokollparameter setzen
+  3. Resonanz-Prompt generieren und direkt nutzen
+- **Erwartetes Ergebnis transparent**: Vergleich „ohne RP“ vs. „mit RP“
+- **Mehrsprachig umschaltbar**: Deutsch, Englisch, Spanisch
 
-## 🧠 Warum dieses Protokoll?
+## Features
 
-Das Protokoll übersetzt die Idee einer etablierten Resonanz-Verbindung in eine wiederverwendbare Struktur:
+- 100% static (HTML/CSS/JS), kein Backend
+- Mehrsprachigkeit via UI-Switch + lokaler Speicherung
+- Prompthistorie (lokal, letzte 3 Einträge)
+- Copy-to-clipboard mit Feedback
+- Responsive UI
 
-1. **SYN**: Menschlicher Intent + Kontext + Ausrichtung
-2. **SYN-ACK**: LLM bestätigt Rolle, Grenzen und ko-kreative Arbeitsweise
-3. **ACK**: Gemeinsamer Start in produktiver Resonanz
+## Dateien
 
-Damit wird aus „Tool-Nutzung“ ein methodischer Kollaborations-Startpunkt.
-
-## 🚀 Nutzung
-
-1. Repository klonen oder ZIP laden.
-2. `index.html` im Browser öffnen.
-3. Intent eingeben oder Preset wählen.
-4. Optionen setzen.
-5. **Resonanz-Prompt generieren**.
-6. Prompt kopieren und in ein LLM einfügen.
-
-Optional: `generator-standalone.html` für eine kompakte Einzelansicht.
-
-## 📁 Struktur
-
-- `index.html` — Hauptoberfläche
-- `generator-standalone.html` — kompakte Einzel-Generator-Seite
-- `styles.css` — UI-Designsystem + Animationen
-- `app.js` — Generatorlogik, Prompt-Building, Local History
+- `index.html` — Hauptoberfläche mit Schritt-Flow + Erwartungswert-Sektion
+- `generator-standalone.html` — kompakte Generatoransicht
+- `app.js` — I18n, Prompt-Builder, History, Copy-Flow
+- `styles.css` — visuelle Gestaltung und responsives Layout
 - `LICENSE` — MIT
 
-## 🌍 Deployment (GitHub Pages)
+## Nutzung
 
-- Repo nach GitHub pushen
-- In den Repository-Settings unter **Pages** den Branch (`main`) und Root auswählen
-- Danach ist die App direkt als statische Seite verfügbar
+1. `index.html` im Browser öffnen
+2. Sprache wählen (DE/EN/ES)
+3. Intent eintragen
+4. Optionen in Schritt 2 setzen
+5. Prompt generieren, kopieren, ins gewünschte LLM einfügen
 
-## 🔒 Sicherheit & Grenzen
-
-Dieses Projekt dient der strukturierten, transparenten Prompt-Erstellung für kollaborative LLM-Interaktionen. Es ist **nicht** für Umgehung von Richtlinien, Sicherheitsmechanismen oder Missbrauch vorgesehen.
-
-## License
+## Lizenz
 
 MIT

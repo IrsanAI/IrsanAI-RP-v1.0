@@ -60,3 +60,30 @@ Damit liegt die Intelligenz dort, wo sie hingehört: beim LLM mit seinem kogniti
 ## Lizenz
 
 MIT
+
+## Hinweis für Entwickler (LOP – Liste offener Punkte)
+
+Was aus meiner Sicht noch offen ist (fachlich, nicht technisch blockiert):
+
+Auflistung der ToDos im aktuellen Repo:
+
+1. **Cross-LLM Validierung der First-Reply-Cockpit-Qualität** — **Status: OFFEN**  
+   Nächster Schritt: RP-Prompt in mehreren Zielsystemen (z. B. ChatGPT, Gemini, Claude, Grok) gegen identische Intents testen und dokumentieren, wie zuverlässig das LLM wirklich (a) probabilistische Einschätzung, (b) autonome Routenwahl und (c) user-zentrierten Ton einhält.
+
+2. **Messbares Effizienz-Benchmarking (Token / Turns / Zeit)** — **Status: OFFEN**  
+   Nächster Schritt: Für repräsentative Intent-Kategorien A/B-Vergleich „mit RP vs. ohne RP“ durchführen; KPI-Vorschlag: Antwort-Turns bis zum brauchbaren Ergebnis, geschätzte Token, subjektive Nutzerklarheit.
+
+3. **Fachliche Kalibrierung der Wahrscheinlichkeits-Ausgaben** — **Status: TEILWEISE ERLEDIGT**  
+   Aktueller Stand: Der Prompt verlangt explizit probabilistische Verlaufseinschätzungen.  
+   Offen bleibt: ein klarer Rahmen, wie das LLM Unsicherheit kommunizieren soll (z. B. konservative Bandbreiten, keine Scheingenauigkeit).
+
+4. **Kanonische Prompt-Beispiele pro Intent-Typ (nur Doku, nicht UI-Preload)** — **Status: OFFEN**  
+   Nächster Schritt: Im README oder in einer separaten Doku-Datei 6–10 anonymisierte Beispiel-Intents mit erwarteten „guten“ First-Reply-Cockpit-Outputs ergänzen, damit Weiterentwicklung konsistent bleibt, ohne User im UI kognitiv abzulenken.
+
+5. **Governance-Hinweise für produktiven Einsatz** — **Status: TEILWEISE ERLEDIGT**  
+   Aktueller Stand: Safety-/Boundary-Hinweise sind im RP-Prompt enthalten.  
+   Offen bleibt: kurze Governance-Policy im Repo (z. B. Umgang mit sensiblen Domänen, wann menschliche Freigabe Pflicht ist, wann RP nicht eingesetzt werden sollte).
+
+6. **Standalone-Ansicht inhaltlich auf den identischen Leittext synchron prüfen** — **Status: ERLEDIGT**  
+   Aktueller Stand: Die Standalone-Seite nutzt denselben Script-Stack (`app.js`) und damit dieselbe Prompt-Logik.
+
